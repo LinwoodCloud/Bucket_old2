@@ -10,6 +10,7 @@ import {
 } from "@mantine/core";
 import { useBooleanToggle } from "@mantine/hooks";
 import logo from "../logo.svg";
+import { Link, NavLink, useLocation } from "react-router-dom";
 
 const HEADER_HEIGHT = 60;
 
@@ -111,31 +112,34 @@ export function BucketHeader() {
       link: "/about",
     },
   ];
+  const location = useLocation();
+
   const [opened, toggleOpened] = useBooleanToggle(false);
-  const [active, setActive] = useState(links[0].link);
+  const [active, setActive] = useState(location.pathname);
   const { classes, cx } = useStyles();
 
   const items = links.map((link) => (
-    <a
+    <Link
       key={link.label}
-      href={link.link}
+      to={link.link}
       className={cx(classes.link, {
         [classes.linkActive]: active === link.link,
       })}
       onClick={(event) => {
-        event.preventDefault();
         setActive(link.link);
         toggleOpened(false);
       }}
     >
       {link.label}
-    </a>
+    </Link>
   ));
 
   return (
     <Header height={HEADER_HEIGHT} mb={120} className={classes.root}>
       <Container className={classes.header}>
-        <img className={classes.logo} src={logo} alt="logo" />
+        <Link to="/" className={classes.logo}>
+          <img className={classes.logo} src={logo} alt="logo" />
+        </Link>
         <Group spacing={5} className={classes.links}>
           {items}
         </Group>

@@ -6,6 +6,6 @@
     "packages/*"
   ],
   "devDependencies": {
-    "typescript": "^4.6.4"
+    "typescript": "next"
   }
 }
