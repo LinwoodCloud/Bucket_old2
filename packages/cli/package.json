@@ -3,8 +3,8 @@
   "packageManager": "yarn@3.2.0",
   "devDependencies": {
     "@types/node": "^17.0.31",
-    "@typescript-eslint/eslint-plugin": "^5.21.0",
-    "@typescript-eslint/parser": "^5.21.0",
+    "@typescript-eslint/eslint-plugin": "^5.22.0",
+    "@typescript-eslint/parser": "^5.22.0",
     "eslint": "^8.14.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.0.0",
@@ -22,7 +22,7 @@
     "dev": "ts-node ./src/index.ts"
   },
   "dependencies": {
-    "chalk": "4",
+    "chalk": "^4",
     "commander": "^9.2.0",
     "nanospinner": "^1.1.0"
   }
