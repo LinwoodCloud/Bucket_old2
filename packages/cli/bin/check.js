@@ -1,14 +1,10 @@
-import chalk from 'chalk';
-import { createSpinner } from 'nanospinner';
-const spinner = createSpinner('Run test').start();
+import ora from 'ora';
+const spinner = ora('Run test');
+spinner.start();
 const log = (...data) => {
-    spinner.clear();
-    console.log(...data);
-    spinner.start();
+    spinner.color = 'yellow';
+    spinner.text = 'Loading rainbows';
 };
 setTimeout(() => {
-    log(chalk.green('Success!'));
+    spinner.stop();
 }, 1000);
-setTimeout(() => {
-    spinner.success();
-}, 5000);

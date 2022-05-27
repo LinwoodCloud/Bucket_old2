@@ -2,28 +2,29 @@
   "name": "cli",
   "packageManager": "yarn@3.2.0",
   "devDependencies": {
-    "@types/node": "^17.0.31",
-    "@typescript-eslint/eslint-plugin": "^5.22.0",
-    "@typescript-eslint/parser": "^5.22.0",
-    "eslint": "^8.14.0",
+    "@types/node": "^17.0.35",
+    "@typescript-eslint/eslint-plugin": "^5.26.0",
+    "@typescript-eslint/parser": "^5.26.0",
+    "eslint": "^8.16.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.0.0",
     "prettier": "2.6.2",
-    "ts-node": "^10.7.0",
-    "typescript": "^4.6.4"
+    "ts-node": "^10.8.0",
+    "typescript": "^4.7.2"
   },
   "bin": "bin/index.js",
   "main": "./bin/index.js",
+  "type": "module",
   "scripts": {
     "lint": "eslint '**/*.{js,ts}' --fix",
     "format": "prettier --write .",
     "build": "tsc",
-    "start": "node ./bin/index.ts",
-    "dev": "ts-node ./src/index.ts"
+    "start": "node ./bin/index.js",
+    "dev": "yarn node --loader ts-node/esm ./src/index.ts"
   },
   "dependencies": {
-    "chalk": "^4",
+    "chalk": "^5.0.1",
     "commander": "^9.2.0",
-    "nanospinner": "^1.1.0"
+    "ora": "^6.1.0"
   }
 }
